@@ -1,0 +1,10 @@
+include ':app'
+rootProject.name = "My Application"
+
+//关键代码，添加flutter module后，增加这2行代码配置
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir,
+        //flutter_module即为创建的模块名称
+        './flutter_module/.android/include_flutter.groovy'
+))
